@@ -31,4 +31,4 @@ Module should have:
 Bonus:
 Is there a way to achieve the goal without the getter and setter methods? (yes, but it might require some spoon-bending)
 
-![Do not try and bend the spoon. That's impossible.](https://media.giphy.com/media/R7SkwRpzmSUFy/giphy-downsized-large.gif)
+![Do not try and bend the spoon. That's impossible.](https://media.giphy.com/media/l41lXlQ93t5OSkWk0/giphy.gif)
