@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const handlebars = require('express-handlebars');
 
+const cream = require('./lib/cream');
 const { slow } = require('./routes');
 
 const server = express();
@@ -11,7 +12,7 @@ server.engine('.hbs', handlebars({extname: '.hbs', defaultLayout: 'main'}));
 server.set('view engine', '.hbs');
 
 server.use(bodyParser.json());
-// server.use(creamCache.init()); /* student implements this */
+server.use(cream.cache); /* student implements this */
 server.use('/slow', slow);
 
 server.get('/', (req, res) => {
