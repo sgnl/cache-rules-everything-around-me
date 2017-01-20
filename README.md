@@ -7,16 +7,14 @@
 
 Route: `/api` is very slow (takes 5 seconds to respond)
 
-Solution:
+Solution: implement caching using Redis!
 
-**cache miss**
+**cache miss flow**
 Implement a caching approach so that when the initial GET request to `/api`, it takes 5 seconds as usual with the
 exception that the response value will be saved to the cache.
 
-
-**cache hit**
-But all subsequent GET requests to `/api` should be served from the cache. This request should be instant, e.g. not take 5 seconds to respond.
-
+**cache hit flow**
+But all subsequent GET requests to `/api` should be served from the cache. This request should be instant, e.g. not take 5 seconds to respond. The cache should expire after 1 minute. After that the first GET request to `/api` will take 5 seconds to respond and the **cache miss** flow will occur
 
 Implementation we're looking for:
 
