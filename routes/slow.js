@@ -10,12 +10,9 @@ router.route('/')
   .get((req, res, next) => {
     return sleep(5000)
       .then(_ => res.render('api/index', (err, html) => {
-        console.log('req.originalUrl: ', req.originalUrl);
-        client.set(req.originalUrl, html);
+        res.setCache(req.originalUrl, html);
         res.send(html);
-        client.getAsync(req.originalUrl)
-          .then(urls => console.info(urls))
-      }));
+      }))
   });
 
 module.exports = router;
