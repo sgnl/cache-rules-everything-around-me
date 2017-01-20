@@ -1,7 +1,6 @@
 
 const express = require('express');
 
-const { client } = require('../lib/cream');
 const sleep = require('../services/sleep');
 
 const router = express.Router();
