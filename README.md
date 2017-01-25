@@ -5,7 +5,7 @@
 
 ![Dollar, dollar, bills y'all.](http://www.themarq.ca/blog/wp-content/uploads/2016/03/tumblr_n3ybc8N8mN1qm3k5io1_500.gif)
 
-Route: `/api` is very slow (takes 5 seconds to respond)
+Route: `/slow` is very slow (takes 5 seconds to respond)
 
 Solution: implement caching using Redis!
 
@@ -18,8 +18,8 @@ But all subsequent GET requests to `/api` should be served from the cache. This 
 
 Implementation we're looking for:
 
-A Module we can import anywhere into the code which will check the
-cache store has cached data for a route and serves it back (cache hit). Otherwise, the middleware lets the request fall-through.
+A Express middleware module that can be imported onto any route on our server. The middleware function will check the
+cache store for the cached data for a route and serves the data in the cache back (cache hit) to the client. Otherwise, if the data has not been cached, the middleware lets the request fall-through and hit the route.
 
 Module should have:
 - a method which returns a function that can be mounted as middleware
