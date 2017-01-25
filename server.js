@@ -4,20 +4,20 @@ const handlebars = require('express-handlebars');
 
 const { slow } = require('./routes');
 
-const server = express();
+const app = express();
 const PORT = 8080;
 
-server.engine('.hbs', handlebars({extname: '.hbs', defaultLayout: 'main'}));
-server.set('view engine', '.hbs');
+app.engine('.hbs', handlebars({extname: '.hbs', defaultLayout: 'main'}));
+app.set('view engine', '.hbs');
 
-server.use(bodyParser.json());
+app.use(bodyParser.json());
 // server.use(creamCache.init()); /* student implements this */
-server.use('/slow', slow);
+app.use('/slow', slow);
 
-server.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.render('index');
 });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   process.stdout.write(`server listening on port ${PORT}`);
 });
