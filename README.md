@@ -29,8 +29,8 @@ Module should have:
 ## Testing
 How does a non-cached request differ from a request served from cache? This is your baseline for your test specifications.
 
-- request assertions with (supertest)[https://github.com/visionmedia/supertest]
-- test runner: (mocha)[https://github.com/mochajs/mocha]
+- request assertions with [supertest](https://github.com/visionmedia/supertest)
+- test runner: [mocha](https://github.com/mochajs/mocha)
 
 ## Final Boss
 Is there a way to achieve the goal without the getter and setter methods? Yes, but it might require some spoon-bending. After this step you will have built a caching middlware with base similarity to other popular express middlware modules. \o/ :sparkles:
